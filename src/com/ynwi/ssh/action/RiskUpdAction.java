@@ -1,5 +1,8 @@
 package com.ynwi.ssh.action;
 
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ynwi.ssh.beans.Risk;
 import com.ynwi.ssh.service.RiskManager;
@@ -28,6 +31,8 @@ public class RiskUpdAction extends ActionSupport{
 			
 			risk = riskmanager.getrisk(risk.getRiskid());
 			System.out.println("Findsuccess"+risk.getRiskid());
+			Map request  = (Map)ActionContext.getContext().get("request");
+			request.put("updrisk",risk);
 			return SUCCESS;
 
 		} catch (Exception e) {

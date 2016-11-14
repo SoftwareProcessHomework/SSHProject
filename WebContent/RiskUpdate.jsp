@@ -102,6 +102,7 @@
     <div class="title">更新风险条目</div>
     <div class="content">
       <s:form action="realriskupdaction">
+      <s:hidden name="risk.riskid" value="%{risk.riskid}"></s:hidden>
         <div class="input">
             <label for="input1">风险内容</label>
             <input type="text" name = "risk.content" value=%{risk.content} id="input1"/>
