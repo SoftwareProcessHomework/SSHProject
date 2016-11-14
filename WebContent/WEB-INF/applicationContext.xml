@@ -11,13 +11,13 @@
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="jdbcUrl">
-			<value>jdbc:mysql://localhost:3306/desserthome</value>
+			<value>jdbc:mysql://139.199.4.97:3306/desserthome</value>
 		</property>
 		<property name="user">
 			<value>root</value>
 		</property>
 		<property name="password">
-			<value></value>
+			<value>941016</value>
 		</property>
 		<property name="maxPoolSize">
 			<value>80</value>
