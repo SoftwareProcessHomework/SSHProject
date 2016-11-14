@@ -107,13 +107,33 @@
             <input type="text" name = "risk.content" id="input1"/>
         </div>
         <div class="input">
-            <label for="input1">可能性（高中低）</label>
-            <input type="text" name = "risk.possibility" id="input1"/>
+            <label for="select2">可能性: </label>
+            <select name="risk.possibility" id="select2" onchange = "changeAction2();">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
         </div>
-        <div class="input">
-            <label for="input1">影响程度（高中低）</label>
-            <input type="text" name = "risk.influence" id="input1"/>
+        <script type="text/javascript">
+				function changeAction2(){
+					var selectValue=document.getElementById('select2').value;
+					document.forms[1]=parseInt(selectValue);
+				}
+		</script>
+		<div class="input">
+            <label for="select3">影响程度: </label>
+            <select name="risk.influence" id="select3" onchange = "changeAction3();">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
         </div>
+        <script type="text/javascript">
+				function changeAction2(){
+					var selectValue=document.getElementById('select3').value;
+					document.forms[2]=parseInt(selectValue);
+				}
+		</script>
         <div class="input">
             <label for="input1">触发器/阈值</label>
             <input type="text" name = "risk.triggerthreshold" id="input1"/>

@@ -33,7 +33,7 @@
 							<input type="password" name="user.password" id="password">
 						</div>
 						 <div class="input">
-            				<label for="select2">店员</label>
+            				<label for="select2">Character: </label>
             					<select name="user.type" id="select2" onchange = "changeAction2();">
                 					<option value="M">Manager</option>
                 					<option value="U">User</option>

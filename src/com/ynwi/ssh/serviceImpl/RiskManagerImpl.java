@@ -1,6 +1,7 @@
 package com.ynwi.ssh.serviceImpl;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.hibernate.HibernateException;
 import org.springframework.beans.BeanUtils;
@@ -27,19 +28,26 @@ public class RiskManagerImpl implements RiskManager{
 	public void create(RiskForm form) throws HibernateException {
 		Risk risk = new Risk();
 		BeanUtils.copyProperties(form, risk);
+		risk.setIsissue("0");
+		risk.setIsidentify("0");
+		risk.setCreatetime(new Date());
 		dao.saveObject(risk);
 	}
 
 	@Override
-	public void update(RiskForm form) throws HibernateException {
-		// TODO Auto-generated method stub
-		
+	public void update(Risk risk) throws HibernateException {
+		dao.updateObject(risk);
 	}
 
 	@Override
 	public ArrayList<Risk> getrisklist() throws HibernateException {
-		// TODO Auto-generated method stub
+		
 		return dao.getrisklist();
+	}
+
+	@Override
+	public Risk getrisk(int id) throws HibernateException {
+		return dao.getrisk(id);
 	}
 
 }

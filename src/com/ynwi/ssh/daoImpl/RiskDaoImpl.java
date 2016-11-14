@@ -18,7 +18,7 @@ public class RiskDaoImpl extends HibernateDaoSupport implements RiskDao{
 	}
 
 	@Override
-	public void updateObject(Object obj) throws HibernateException {
+	public void updateObject(Risk obj) throws HibernateException {
 		getHibernateTemplate().update(obj);
 	}
 
@@ -27,6 +27,13 @@ public class RiskDaoImpl extends HibernateDaoSupport implements RiskDao{
 		String hql = "from Risk";
 		List<Risk> rlist =getHibernateTemplate().find(hql);
 		return (ArrayList<Risk>) rlist;
+	}
+
+	@Override
+	public Risk getrisk(int id) throws HibernateException {
+		Risk risk = null;
+		risk = (Risk) this.getHibernateTemplate().get(Risk.class, id);
+		return risk;
 	}
 
 }

@@ -10,6 +10,8 @@ import com.ynwi.ssh.forms.RiskForm;
 
 public interface RiskManager {
 	public void create(RiskForm form)throws HibernateException;
-	public void update(RiskForm form)throws HibernateException;
+	public void update(Risk risk)throws HibernateException;
+	public Risk getrisk(int id)throws HibernateException;
+	
 	public ArrayList<Risk>getrisklist()throws HibernateException;
 }

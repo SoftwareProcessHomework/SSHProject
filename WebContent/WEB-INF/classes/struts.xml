@@ -138,6 +138,17 @@
 			<result name="success">/Index.jsp</result>
 			<result name="error">/Fail.jsp</result>
 		</action>
+		
+		<action name="riskupdaction" class="riskupdAction">
+			<result name="success">/RiskUpdate.jsp</result>
+		</action>
+		
+		<action name="realriskupdaction" class="realriskupdAction">
+			<result name="input">/RiskUpdate.jsp</result>
+			<result name="success">/Index.jsp</result>
+			<result name="error">/Fail.jsp</result>
+		</action>
+		
 	</package>
 
 </struts>

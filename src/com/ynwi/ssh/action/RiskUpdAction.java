@@ -1,20 +1,20 @@
 package com.ynwi.ssh.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.ynwi.ssh.forms.RiskForm;
+import com.ynwi.ssh.beans.Risk;
 import com.ynwi.ssh.service.RiskManager;
 
-public class RiskAction extends ActionSupport{
+public class RiskUpdAction extends ActionSupport{
 
 
 	private static final long serialVersionUID = 1L;
 
-	private RiskForm risk;
+	private Risk risk;
 	private RiskManager riskmanager;
-	public RiskForm getRisk() {
+	public Risk getRisk() {
 		return risk;
 	}
-	public void setRisk(RiskForm risk) {
+	public void setRisk(Risk risk) {
 		this.risk = risk;
 	}
 	public RiskManager getRiskmanager() {
@@ -25,8 +25,9 @@ public class RiskAction extends ActionSupport{
 	}
 	public String execute() {
 		try {
-			System.out.println("Create Risk");
-			riskmanager.create(risk);
+			
+			risk = riskmanager.getrisk(risk.getRiskid());
+			System.out.println("Findsuccess"+risk.getRiskid());
 			return SUCCESS;
 
 		} catch (Exception e) {

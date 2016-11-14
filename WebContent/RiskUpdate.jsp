@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Risk Page</title>
+<title>Risk Create </title>
         <!-- jQuery AND jQueryUI -->
         <script type="text/javascript" src="/SSHProject/js/libs/jquery/1.6/jquery.min.js"></script>
         <script type="text/javascript" src="/SSHProject/js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
@@ -19,7 +19,7 @@
 </head>
 <body>
  <script type="text/javascript" src="/SSHProject/content/settings/main.js"></script>
-<link rel="stylesheet" href="/SSHProject/content/settings/style.css" />
+			<link rel="stylesheet" href="/SSHProject/content/settings/style.css" />
 
 
   <div class="settings" id="settings">
@@ -78,8 +78,8 @@
         <!--            
                 SIDEBAR
                          --> 
-        <div id="sidebar">
-            <ul>
+           <div id="sidebar">
+             <ul>
                 <li>
                     <a href="Index.jsp">
                         <img src="/SSHProject/img/icons/menu/inbox.png" alt="" />
@@ -88,69 +88,86 @@
                 </li>
                 <li class="current"><a href="#"><img src="/SSHProject/img/icons/menu/layout.png" alt="" />Options On Risk</a>
                     <ul>
-                         <li ><a href="RiskCreate.jsp">Create Risk</a></li>
-                         <li class="current"><a href="allriskaction.action">Risk List Check</a></li>
+                         <li class="current"><a href="RiskCreate.jsp">Create Risk</a></li>
+                         <li><a href="allriskaction.action">Risk List Check</a></li>
                     </ul>
                 </li>
               </ul>
-
-        </div>
-               
-
+        </div>  
 
 	<div id="content" class="white">
-            <h1><img src="img/icons/posts.png" alt="" /> Risk List</h1>
+            <h1><img src="img/icons/posts.png" alt="" /> Forms</h1>
 
 <div class="bloc">
-    <div class="title">Show Risk list</div>
+    <div class="title">更新风险条目</div>
     <div class="content">
-         <table>
-            <thead>
-                <tr>
-                    <th>Content</th>
-                    <th>Possibility</th>
-                    <th>Influence</th>
-                    <th>Trigger/threshold</th>
-                    <th>Submitter</th>
-
-                    <th>Spoorer</th>
-                    <th>IsIdentify</th>
-                    <th>IsIssue</th>
-                    <th>CreateTime</th>
-                    <th>Update</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<s:iterator value="#request.risklist" id="us">  
-                    <tr>
-                     <td><s:property value="#us.content"/>  </td>
-                    <td>
-                    <s:property value="#us.possibility"/>
-                    </td>
-                    <td><s:property value="#us.influence"/>  </td>
-
-                    <td><s:property value="#us.triggerthreshold"/>  </td>
-                    <td><s:property value="#us.submitter"/>  </td>
-                    <td><s:property value="#us.spoorer"/></td>
-                    <td> <s:if test = "#us.isidentify != 1">
-                    	No
-                    </s:if>
-                    <s:if test = "#us.isidentify == 1">
-                    	Yes
-                    </s:if> </td>
-					<td> <s:if test = "#us.isissue != 1">
-                    	No
-                    </s:if>
-                    <s:if test = "#us.isissue == 1">
-                    	Yes
-                    </s:if> </td>
-                    <td><s:property value="#us.createtime"/>  </td>
-                    <td><s:a href="riskupdaction.action?risk.riskid=%{#us.riskid}">Update</s:a>         </td>
-                                        
-                    </tr>
-               </s:iterator> 
-                            </tbody>
-        </table>
+      <s:form action="realriskupdaction">
+        <div class="input">
+            <label for="input1">风险内容</label>
+            <input type="text" name = "risk.content" value=%{risk.content} id="input1"/>
+        </div>
+        <div class="input">
+            <label for="select2">可能性: </label>
+            <select name="risk.possibility" id="select2" onchange = "changeAction2();">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <script type="text/javascript">
+				function changeAction2(){
+					var selectValue=document.getElementById('select2').value;
+					document.forms[1]=parseInt(selectValue);
+				}
+		</script>
+		<div class="input">
+            <label for="select3">影响程度: </label>
+            <select name="risk.influence" id="select3" onchange = "changeAction3();">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <script type="text/javascript">
+				function changeAction3(){
+					var selectValue=document.getElementById('select3').value;
+					document.forms[2]=parseInt(selectValue);
+				}
+		</script>
+        <div class="input">
+            <label for="input1">触发器/阈值</label>
+            <input type="text" name = "risk.triggerthreshold" id="input1"/>
+        </div>
+        <div class="input">
+            <label for="select3">识别与否: </label>
+            <select name="risk.isidentify" id="select4" onchange = "changeAction4();">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+        <script type="text/javascript">
+				function changeAction4(){
+					var selectValue=document.getElementById('select4').value;
+					document.forms[4]=parseInt(selectValue);
+				}
+		</script>
+		<div class="input">
+            <label for="select3">是否成为问题: </label>
+            <select name="risk.isissue" id="select4" onchange = "changeAction4();">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+        <script type="text/javascript">
+				function changeAction4(){
+					var selectValue=document.getElementById('select4').value;
+					document.forms[5]=parseInt(selectValue);
+				}
+		</script>
+        <div class="submit">
+            <input type="submit" value="Update Risk Entry" />
+        </div>
+       </s:form>
     </div>
 </div>     
 
