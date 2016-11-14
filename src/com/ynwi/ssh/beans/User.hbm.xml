@@ -151,7 +151,7 @@
 			not-null="true" />
 		<property name="isidentify" column="isidentify" type="java.lang.String"
 			not-null="true" length="45" />
-		<property name="isissue" column=""isissue"" type="java.lang.String"
+		<property name="isissue" column="isissue" type="java.lang.String"
 			not-null="true" length="45" />
 	</class>
 </hibernate-mapping>

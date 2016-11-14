@@ -32,10 +32,19 @@
 							<label>Password: </label>
 							<input type="password" name="user.password" id="password">
 						</div>
-						<div>
-							<label>Character: </label>
-							<input type="text" name="user.type" id="password">
-						</div>
+						 <div class="input">
+            				<label for="select2">店员</label>
+            					<select name="user.type" id="select2" onchange = "changeAction2();">
+                					<option value="M">Manager</option>
+                					<option value="U">User</option>
+            					</select>
+        				</div>
+						<script type="text/javascript">
+							function changeAction2(){
+								var selectValue=document.getElementById('select2').value;
+								document.forms[2]=parseInt(selectValue);
+							}
+						</script>
 						<div class="bottom">
 							<input type="submit" value="Register Your Account"></input>
 							<div class="clear"></div>
