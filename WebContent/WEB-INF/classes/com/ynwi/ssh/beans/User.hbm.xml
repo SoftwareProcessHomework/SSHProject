@@ -147,5 +147,11 @@
 			not-null="true" length="45" />
 		<property name="spoorer" column="spoorer" type="java.lang.String"
 			not-null="true" length="45" />
+		<property name="createtime" column="createtime" type="java.util.Date"
+			not-null="true" />
+		<property name="isidentify" column="isidentify" type="java.lang.String"
+			not-null="true" length="45" />
+		<property name="isissue" column="isissue" type="java.lang.String"
+			not-null="true" length="45" />
 	</class>
 </hibernate-mapping>

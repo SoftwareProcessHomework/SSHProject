@@ -1,5 +1,7 @@
 package com.ynwi.ssh.beans;
 
+import java.util.Date;
+
 public class Risk {
 	private int riskid;
 	private String content;
@@ -8,6 +10,27 @@ public class Risk {
 	private String triggerthreshold;
 	private String submitter;
 	private String spoorer;
+	private Date createtime;
+	public Date getCreatetime() {
+		return createtime;
+	}
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
+	}
+	public String getIsidentify() {
+		return isidentify;
+	}
+	public void setIsidentify(String isidentify) {
+		this.isidentify = isidentify;
+	}
+	public String getIsissue() {
+		return isissue;
+	}
+	public void setIsissue(String isissue) {
+		this.isissue = isissue;
+	}
+	private String isidentify;
+	private String isissue;
 	public int getRiskid() {
 		return riskid;
 	}
