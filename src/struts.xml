@@ -89,7 +89,16 @@
 			<result name="error">/Fail.jsp</result>
 		</action>
 		
-		
+		<action name="allplanaction" class="allplanAciton">
+			<result name="input">/Index.jsp</result>
+			<result name="success">/Planlist.jsp</result>
+			<result name="error">/Fail.jsp</result>
+		</action>
+		<action name="planaction" class="planAciton">
+			<result name="input">/Index.jsp</result>
+			<result name="success">/PlanCreate.jsp</result>
+			<result name="error">/Fail.jsp</result>
+		</action>
 		<action name="allriskaction" class="allriskAction">
 			<result name="input">/Index.jsp</result>
 			<result name="success">/Risklist.jsp</result>

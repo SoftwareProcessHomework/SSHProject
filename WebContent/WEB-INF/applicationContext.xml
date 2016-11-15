@@ -11,7 +11,7 @@
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="jdbcUrl">
-			<value>jdbc:mysql://139.199.4.97:3306/desserthome</value>
+			<value>jdbc:mysql://localhost:3306/desserthome</value>
 		</property>
 		<property name="user">
 			<value>root</value>
@@ -101,6 +101,12 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	
+	<bean id="planDao" class="com.ynwi.ssh.daoImpl.PlanDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 
 	<!--用户注册业务逻辑类 -->
 	<bean id="userManager" class="com.ynwi.ssh.serviceImpl.UserManagerImpl">
@@ -145,6 +151,12 @@
 	<bean id="riskmanager" class="com.ynwi.ssh.serviceImpl.RiskManagerImpl">
 		<property name="dao">
 			<ref bean="riskDao" />
+		</property>
+	</bean>
+	
+	<bean id="planmanager" class="com.ynwi.ssh.serviceImpl.PlanManagerImpl">
+		<property name="dao">
+			<ref bean="planDao" />
 		</property>
 	</bean>
 
@@ -312,6 +324,18 @@
 	<bean id="ordersell" class="com.ynwi.ssh.action.OrderSellAction">
 		<property name="ordermanager">
 			<ref bean="orderManager" />
+		</property>
+	</bean>
+	
+	<bean id="allplanAciton" class="com.ynwi.ssh.action.AllPlanAction">
+		<property name="planmanager">
+			<ref bean="planmanager" />
+		</property>
+	</bean>
+	
+	<bean id="planAciton" class="com.ynwi.ssh.action.PlanAction">
+		<property name="planmanager">
+			<ref bean="planmanager" />
 		</property>
 	</bean>
 
