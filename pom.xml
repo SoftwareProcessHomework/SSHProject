@@ -32,7 +32,7 @@
         <version>3.0.0</version>
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
-          <warName>Demo</warName>
+          <warName>SSHProject</warName>
         </configuration>
       </plugin>
     </plugins>
