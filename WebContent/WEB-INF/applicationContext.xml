@@ -291,6 +291,12 @@
 		</property>
 	</bean>
 	
+	<bean id="risklistaction" class="com.ynwi.ssh.action.RisklistAction">
+		<property name="riskmanager">
+			<ref bean="riskmanager" />
+		</property>
+	</bean>
+	
 	<bean id="realriskupdAction" class="com.ynwi.ssh.action.RiskUpdAction2 " scope="prototype">
 		<property name="riskmanager">
 			<ref bean="riskmanager" />

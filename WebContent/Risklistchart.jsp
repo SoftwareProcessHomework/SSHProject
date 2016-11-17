@@ -1,12 +1,11 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
- <head>
-        <title>Your Admin Panel</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-        
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Risk Page</title>
         <!-- jQuery AND jQueryUI -->
         <script type="text/javascript" src="/SSHProject/js/libs/jquery/1.6/jquery.min.js"></script>
         <script type="text/javascript" src="/SSHProject/js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
@@ -17,11 +16,9 @@
         -->
         <link rel="stylesheet" href="/SSHProject/css/min.css" />
         <script type="text/javascript" src="/SSHProject/js/min.js"></script>
-        
-    </head>
-    <body>
-        
-        <script type="text/javascript" src="/SSHProject/content/settings/main.js"></script>
+</head>
+<body>
+ <script type="text/javascript" src="/SSHProject/content/settings/main.js"></script>
 <link rel="stylesheet" href="/SSHProject/content/settings/style.css" />
 
 
@@ -91,116 +88,83 @@
                 </li>
                 <li class="current"><a href="#"><img src="/SSHProject/img/icons/menu/layout.png" alt="" />Options On Risk</a>
                     <ul>
-                         <li><a href="RiskCreate.jsp">Create Risk</a></li>
-                         <li><a href="allriskaction.action">Risk List Check</a></li>
-                         <li><a href="PlanCreate.jsp">Create Plan</a></li>
-                         <li><a href="allplanaction.action">Plan List Check</a></li>
-                         <li><a href="risklistaction.action">Charts</a></li>
+                         <li class="current"><a href="risklistaction.action">Risk List Check</a></li>
                     </ul>
                 </li>
               </ul>
 
+        </div>
+               
 
-        </div>
-                
-                
-                
-                
-        <!--            
-              CONTENT 
-                        --> 
-        <div id="content" class="white">
-            <h1><img src="/SSHProject/img/icons/dashboard.png" alt="" /> Dashboard
-</h1>
-                
-<div class="bloc left">
+
+	<div id="content" class="white">
+            <h1><img src="img/icons/posts.png" alt="" /> Risk List</h1>    
+
+<div class="bloc">
     <div class="title">
-        Dashboard
-    </div>
-    <div class="content dashboard">
-        <div class="center">
-            <a href="allriskaction.action" class="shortcut">
-                <img src="/SSHProject/img/page.png" alt="" width="48" height="48"/>
-                Risk list
-            </a>
-            <a href="RiskCreate.jsp" class="shortcut">
-                <img src="/SSHProject/img/picture.png" alt="" width="48" height="48" />
-                Create risk
-            </a>
-            <div class="cb"></div>
+        Charts
+        <div class="tabs" id="charts">
+            <a href="#pie">Issue</a>
         </div>
-        <p>选择左侧操作或图标操作</p>
+    </div>
+    <div>
+        
+        
+        <div class="content" id="pie">
+            <table class="graph type-pie tips">
+                    <caption>Issue</caption>
+                    <thead>
+                            <tr>
+                                    <td></td>
+                                    <th scope="col">Risks</th>
+                            </tr>
+                    </thead>
+						<tbody>
+							<s:iterator value="#request.risklist" id="us">
+								<tr>
+									<th scope="row"><s:property value="#us.content"/></th> 
+                                    <td><s:property value="#us.isissue"/> </td> 
+								</tr>
+							</s:iterator>
+						</tbody>
+					</table>
+        </div>
     </div>
 </div>
 
-
-                
-<div class="bloc right">
+<div class="bloc">
     <div class="title">
-        为未来拓展做准备
+        Charts
+        <div class="tabs" id="charts">
+            <a href="#pie">Identify</a>
+        </div>
     </div>
-    <div class="content">
-        <div class="left">
-            <table class="noalt">
-                <thead>
-                    <tr>
-                        <th colspan="2"><em>Content</em></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><h4>460</h4></td>
-                        <td>Posts</td>
-                    </tr>
-                    <tr>
-                        <td><h4>12</h4></td>
-                        <td>Pages</td>
-                    </tr>
-                    <tr>
-                        <td><h4>5</h4></td>
-                        <td>Categories</td>
-                    </tr>
-                    <tr>
-                        <td><h4>20 000</h4></td>
-                        <td>Contacts</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div>
+        
+        
+        <div class="content" id="pie">
+            <table class="graph type-pie tips">
+                    <caption>Identify</caption>
+                    <thead>
+                            <tr>
+                                    <td></td>
+                                    <th scope="col">Risks</th>
+                            </tr>
+                    </thead>
+						<tbody>
+							<s:iterator value="#request.risklist" id="us">
+								<tr>
+									<th scope="row"><s:property value="#us.content"/></th> 
+                                    <td><s:property value="#us.isidentify"/> </td> 
+								</tr>
+							</s:iterator>
+						</tbody>
+					</table>
         </div>
-        <div class="right">
-            <table class="noalt">
-                <thead>
-                    <tr>
-                        <th colspan="2"><em>Comments</em></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><h4>46 000</h4></td>
-                        <td class="good">Comments</td>
-                    </tr>
-                    <tr>
-                        <td><h4>5</h4></td>
-                        <td class="neutral">Waiting for validation</td>
-                    </tr>
-                    <tr>
-                        <td><h4>0</h4></td>
-                        <td class="bad">Spams</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="cb"></div>
     </div>
 </div>
-
-
-<div class="cb"></div>
- 
-     
 
 </div>
         
-        
-    </body>
+</body>
 </html>
