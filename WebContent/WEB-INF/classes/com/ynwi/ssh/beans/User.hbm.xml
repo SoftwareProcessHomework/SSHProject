@@ -164,4 +164,15 @@
 		<property name="userid" column="userid" type="java.lang.String"
 			not-null="true" length="45" />
 	</class>
+	
+	<class name="Riskandplan" table="riskandplan">
+		<id name="idriskandplan" column="idriskandplan">	
+			<generator class="native"></generator>
+		</id>
+		<property name="riskid" column="riskid" type="java.lang.String"
+			not-null="true" length="45" />
+		<property name="planid" column="planid" type="java.lang.String"
+			not-null="true" length="45" />
+	</class>
+	
 </hibernate-mapping>
