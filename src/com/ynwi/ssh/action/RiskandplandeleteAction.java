@@ -8,7 +8,7 @@ import com.ynwi.ssh.beans.Risk;
 import com.ynwi.ssh.beans.Riskandplan;
 import com.ynwi.ssh.service.RiskManager;
 
-public class RiskandplanAction extends ActionSupport{
+public class RiskandplandeleteAction extends ActionSupport{
 
 
 	private static final long serialVersionUID = 1L;
@@ -40,7 +40,7 @@ public class RiskandplanAction extends ActionSupport{
 	public String execute() {
 		try {
 			
-			riskmanager.createriskandplanrelation(riskid, planid);
+			riskmanager.deleteriskandplanrelation(riskid, planid);
 			return SUCCESS;
 
 		} catch (Exception e) {

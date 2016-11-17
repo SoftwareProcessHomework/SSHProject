@@ -344,5 +344,17 @@
 			<ref bean="planmanager" />
 		</property>
 	</bean>
+	
+	<bean id="riskandplan" class="com.ynwi.ssh.action.RiskandplanAction">
+		<property name="planmanager">
+			<ref bean="planmanager" />
+		</property>
+	</bean>
+	
+	<bean id="riskandplandelete" class="com.ynwi.ssh.action.RiskandplandeleteAction">
+		<property name="planmanager">
+			<ref bean="planmanager" />
+		</property>
+	</bean>
 
 </beans>
