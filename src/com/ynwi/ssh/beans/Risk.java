@@ -11,26 +11,29 @@ public class Risk {
 	private String submitter;
 	private String spoorer;
 	private Date createtime;
+
+	private int isidentify;
+	private int isissue;
+	
+	public int getIsidentify() {
+		return isidentify;
+	}
+	public void setIsidentify(int isidentify) {
+		this.isidentify = isidentify;
+	}
+	public int getIsissue() {
+		return isissue;
+	}
+	public void setIsissue(int isissue) {
+		this.isissue = isissue;
+	}
 	public Date getCreatetime() {
 		return createtime;
 	}
 	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
-	public String getIsidentify() {
-		return isidentify;
-	}
-	public void setIsidentify(String isidentify) {
-		this.isidentify = isidentify;
-	}
-	public String getIsissue() {
-		return isissue;
-	}
-	public void setIsissue(String isissue) {
-		this.isissue = isissue;
-	}
-	private String isidentify;
-	private String isissue;
+
 	public int getRiskid() {
 		return riskid;
 	}

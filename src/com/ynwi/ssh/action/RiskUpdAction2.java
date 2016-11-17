@@ -44,6 +44,13 @@ public class RiskUpdAction2 extends ActionSupport{
 			risk.setCreatetime(temp.getCreatetime());
 			risk.setSpoorer(temp.getSpoorer());
 			risk.setSubmitter(temp.getSubmitter());
+			if(risk.getIsidentify()==1){
+				risk.setIsidentify(temp.getIsidentify()+1);
+			}
+			if(risk.getIsissue()==1){
+				risk.setIsissue(temp.getIsissue()+1);
+			}
+			
 			riskmanager.update(risk);
 			return SUCCESS;
 

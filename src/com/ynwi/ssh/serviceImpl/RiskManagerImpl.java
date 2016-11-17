@@ -28,8 +28,8 @@ public class RiskManagerImpl implements RiskManager{
 	public void create(RiskForm form) throws HibernateException {
 		Risk risk = new Risk();
 		BeanUtils.copyProperties(form, risk);
-		risk.setIsissue("0");
-		risk.setIsidentify("0");
+		risk.setIsissue(0);
+		risk.setIsidentify(0);
 		risk.setCreatetime(new Date());
 		dao.saveObject(risk);
 	}
