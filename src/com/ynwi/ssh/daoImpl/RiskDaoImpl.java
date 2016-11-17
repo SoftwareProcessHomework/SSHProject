@@ -8,6 +8,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.ynwi.ssh.beans.Clerk;
 import com.ynwi.ssh.beans.Risk;
+import com.ynwi.ssh.beans.Riskandplan;
 import com.ynwi.ssh.dao.RiskDao;
 
 public class RiskDaoImpl extends HibernateDaoSupport implements RiskDao{
@@ -34,6 +35,18 @@ public class RiskDaoImpl extends HibernateDaoSupport implements RiskDao{
 		Risk risk = null;
 		risk = (Risk) this.getHibernateTemplate().get(Risk.class, id);
 		return risk;
+	}
+
+	@Override
+	public void deleteObject(Object obj) throws HibernateException {
+		getHibernateTemplate().delete(obj);
+	}
+
+	@Override
+	public ArrayList<Riskandplan> getriskandplan() throws HibernateException {
+		String hql = "from Riskandplan";
+		List<Riskandplan> raplist = getHibernateTemplate().find(hql);
+		return (ArrayList<Riskandplan>) raplist;
 	}
 
 
