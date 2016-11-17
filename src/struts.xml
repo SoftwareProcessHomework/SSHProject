@@ -12,6 +12,7 @@
 			<result name="success">/Login.jsp</result>
 			<result name="error">/Fail.jsp</result>
 		</action>
+		
 		<action name="check" class="checkAction">
 			<result name="input">/Login.jsp</result>
 			<result name="success">/Index.jsp</result>
@@ -164,7 +165,16 @@
 			<result name="success">/Risklistchart.jsp</result>
 			<result name="error">/Fail.jsp</result>
 		</action>
-		
+		<action name="plandetailaction" class="plandetailaction">
+			<result name="input">/Planlist.jsp</result>
+			<result name="success">/PlanDetail.jsp</result>
+			<result name="error">/Fail.jsp</result>
+		</action>
+		<action name="deleteplanandriskaction" class="deleteplanandriskaction">
+			<result name="input">/PlanDetail.jsp</result>
+			<result name="success">/PlanDetail.jsp</result>
+			<result name="error">/Fail.jsp</result>
+		</action>
 	</package>
 
 </struts>

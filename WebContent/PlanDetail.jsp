@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Plan detail</title>
+<title>Plan Detail</title>
         <!-- jQuery AND jQueryUI -->
         <script type="text/javascript" src="/SSHProject/js/libs/jquery/1.6/jquery.min.js"></script>
         <script type="text/javascript" src="/SSHProject/js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
@@ -88,10 +88,7 @@
                 </li>
                 <li class="current"><a href="#"><img src="/SSHProject/img/icons/menu/layout.png" alt="" />Options On Risk</a>
                     <ul>
-                         <li><a href="RiskCreate.jsp">Create Risk</a></li>
-                         <li><a href="allriskaction.action">Risk List Check</a></li>
-                         <li><a href="PlanCreate.jsp">Create Plan</a></li>
-                         <li><a href="allplanaction.action">Plan List Check</a></li>
+                         <li class="current"><a href="allriskaction.action">Risk List Check</a></li>
                     </ul>
                 </li>
               </ul>
@@ -104,7 +101,7 @@
             <h1><img src="img/icons/posts.png" alt="" /> Risk List</h1>
 
 <div class="bloc">
-    <div class="title">#request.planname</div>
+    <div class="title">${request.planid}</div>
     <div class="content">
          <table>
             <thead>
@@ -120,6 +117,7 @@
                     <th>IsIssue</th>
                     <th>CreateTime</th>
                     <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -147,12 +145,14 @@
                     	Yes
                     </s:if> </td>
                     <td><s:property value="#us.createtime"/>  </td>
-                    <td><s:a href="riskupdaction.action?risk.riskid=%{#us.riskid}">Update</s:a>         </td>
-                                        
+                    <td><s:a href="riskupdaction.action?risk.riskid=%{#us.riskid}">Update</s:a>         </td>              
+                    <td><s:a href="deleteplanandriskaction.action?riskid=%{#us.riskid}&planid=%{#request.planid}">Delete</s:a>
                     </tr>
                </s:iterator> 
                             </tbody>
         </table>
+        <br>
+        <a href="#" style="float:right;">Add risk into this plan</a><br>
     </div>
 </div>     
 

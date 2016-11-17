@@ -62,12 +62,17 @@ public class RiskManagerImpl implements RiskManager{
 	@Override
 	public void deleteriskandplanrelation(String riskid, String planid) throws HibernateException {
 		ArrayList<Riskandplan> raplist = dao.getriskandplan();
-		for(int i=0;i>raplist.size();i++){
+		for(int i=0;i<raplist.size();i++){
 			Riskandplan rap = raplist.get(i);
 			if(rap.getRiskid().equals(riskid)&&rap.getPlanid().equals(planid)){
 				dao.deleteObject(rap);
 			}
 		}
+	}
+
+	@Override
+	public ArrayList<Riskandplan> getriskandplanlist() throws HibernateException {
+		return dao.getriskandplan();
 	}
 
 }

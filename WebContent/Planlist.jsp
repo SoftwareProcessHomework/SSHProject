@@ -120,7 +120,7 @@
                     <td>
                     <s:property value="#us.userid"/>
                     </td>
-                    <td><s:a href="plandetailaction.action?plan.planid=%{#us.planid}">Info</s:a>         </td>
+                    <td><s:a href="plandetailaction.action?planid=%{#us.planid}&planname=%{#us.name}">Info</s:a>         </td>
                                         
                     </tr>
                </s:iterator> 

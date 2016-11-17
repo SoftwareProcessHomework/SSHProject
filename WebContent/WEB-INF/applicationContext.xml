@@ -17,7 +17,7 @@
 			<value>root</value>
 		</property>
 		<property name="password">
-			<value>qwert321</value>
+			<value>941016</value>
 		</property>
 		<property name="maxPoolSize">
 			<value>80</value>
@@ -158,6 +158,7 @@
 		<property name="dao">
 			<ref bean="planDao" />
 		</property>
+		
 	</bean>
 
 	<!-- 用户注册的Action -->
@@ -352,6 +353,17 @@
 	</bean>
 	
 	<bean id="riskandplandelete" class="com.ynwi.ssh.action.RiskandplandeleteAction">
+		<property name="riskmanager">
+			<ref bean="riskmanager" />
+		</property>
+	</bean>
+	
+	<bean id="plandetailaction" class="com.ynwi.ssh.action.PlanDetailAction">
+		<property name="riskmanager">
+			<ref bean="riskmanager" />
+		</property>
+	</bean>
+	<bean id="deleteplanandriskaction" class="com.ynwi.ssh.action.DeletePlanAndRiskAction">
 		<property name="riskmanager">
 			<ref bean="riskmanager" />
 		</property>
