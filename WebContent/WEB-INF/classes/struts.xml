@@ -159,6 +159,12 @@
 			<result name="error">/Fail.jsp</result>
 		</action>
 		
+		<action name="risklistaction" class="risklistaction">
+			<result name="input">/Index.jsp</result>
+			<result name="success">/Risklistchart.jsp</result>
+			<result name="error">/Fail.jsp</result>
+		</action>
+		
 	</package>
 
 </struts>
