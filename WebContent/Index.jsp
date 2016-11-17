@@ -96,6 +96,7 @@
                          <li><a href="PlanCreate.jsp">Create Plan</a></li>
                          <li><a href="allplanaction.action">Plan List Check</a></li>
                          <li><a href="risklistaction.action">Charts</a></li>
+                         <li><a href="riskfliter.jsp">Charts2</a></li>
                     </ul>
                 </li>
               </ul>
