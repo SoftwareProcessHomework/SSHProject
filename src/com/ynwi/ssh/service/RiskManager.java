@@ -13,4 +13,5 @@ public interface RiskManager {
 	public void update(Risk risk)throws HibernateException;
 	public Risk getrisk(int id)throws HibernateException;
 	public ArrayList<Risk>getrisklist()throws HibernateException;
+	public void createriskandplanrelation(String riskid,String planid)throws HibernateException;
 }

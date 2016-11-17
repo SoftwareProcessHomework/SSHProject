@@ -7,6 +7,7 @@ import org.hibernate.HibernateException;
 import org.springframework.beans.BeanUtils;
 
 import com.ynwi.ssh.beans.Risk;
+import com.ynwi.ssh.beans.Riskandplan;
 import com.ynwi.ssh.dao.RiskDao;
 import com.ynwi.ssh.forms.RiskForm;
 import com.ynwi.ssh.service.RiskManager;
@@ -48,6 +49,14 @@ public class RiskManagerImpl implements RiskManager{
 	@Override
 	public Risk getrisk(int id) throws HibernateException {
 		return dao.getrisk(id);
+	}
+
+	@Override
+	public void createriskandplanrelation(String riskid, String planid) throws HibernateException {
+		Riskandplan rap = new Riskandplan();
+		rap.setRiskid(riskid);
+		rap.setPlanid(planid);
+		dao.saveObject(rap);
 	}
 
 }

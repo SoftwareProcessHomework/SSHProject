@@ -13,4 +13,5 @@ public interface RiskDao {
 	
 	public ArrayList<Risk> getrisklist()throws HibernateException; 
 	public Risk getrisk(int id)throws HibernateException; 
+	
 }

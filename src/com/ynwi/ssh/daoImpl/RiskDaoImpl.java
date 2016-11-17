@@ -36,4 +36,6 @@ public class RiskDaoImpl extends HibernateDaoSupport implements RiskDao{
 		return risk;
 	}
 
+
+
 }
