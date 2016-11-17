@@ -12,6 +12,5 @@ public interface RiskManager {
 	public void create(RiskForm form)throws HibernateException;
 	public void update(Risk risk)throws HibernateException;
 	public Risk getrisk(int id)throws HibernateException;
-	
 	public ArrayList<Risk>getrisklist()throws HibernateException;
 }
