@@ -4,8 +4,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Plan Detail</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+<title>Risk List</title>
         <!-- jQuery AND jQueryUI -->
         <script type="text/javascript" src="/SSHProject/js/libs/jquery/1.6/jquery.min.js"></script>
         <script type="text/javascript" src="/SSHProject/js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
@@ -88,7 +94,7 @@
                 </li>
                 <li class="current"><a href="#"><img src="/SSHProject/img/icons/menu/layout.png" alt="" />Options On Risk</a>
                     <ul>
-                         <li class="current"><a href="allriskaction.action">Risk List Check</a></li>
+                         <li class="current"><a href="risklistaction.action">Risk List Check</a></li>
                     </ul>
                 </li>
               </ul>
@@ -97,11 +103,43 @@
                
 
 
+<div class="bloc">
+    <div class="title">筛选风险</div>
+    
+</div>
+
 	<div id="content" class="white">
-            <h1><img src="img/icons/posts.png" alt="" /> Risk List</h1>
+            <h1><img src="img/icons/posts.png" alt="" /> Risk List</h1>    
+
+
+
+
 
 <div class="bloc">
-    <div class="title">${request.planid}</div>
+
+
+	<div class="content">
+      <s:form action="risklistaction">
+        <div class="input">
+            <label for="input1">开始时间</label>
+            <input type="text" name = "begintime" id="input1" class="Wdate" onClick="WdatePicker()" />
+        </div>
+        <div class="input">
+            <label for="input1">结束时间</label>
+            <input type="text" name = "endtime" id="input1"  class="Wdate" onClick="WdatePicker()" />
+        </div>
+        <div class="submit">
+            <input type="submit" value="Fliter Risk Entry" />
+        </div>
+       </s:form>
+       
+       
+       
+    </div>
+
+
+<div class="bloc">
+    <div class="title">Show Risk list</div>
     <div class="content">
          <table>
             <thead>
@@ -116,8 +154,7 @@
                     <th>IsIdentify</th>
                     <th>IsIssue</th>
                     <th>CreateTime</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <th>Add</th>
                 </tr>
             </thead>
             <tbody>
@@ -145,16 +182,14 @@
                     	Yes
                     </s:if> </td>
                     <td><s:property value="#us.createtime"/>  </td>
-                    <td><s:a href="riskupdaction.action?risk.riskid=%{#us.riskid}">Update</s:a>         </td>              
-                    <td><s:a href="deleteplanandriskaction.action?riskid=%{#us.riskid}&planid=%{#request.planid}">Delete</s:a>
+                    <td><s:a href="addriskandplan.action?riskid=%{#us.riskid}&planid=%{#request.planid}">Add</s:a>
+                                        
                     </tr>
                </s:iterator> 
                             </tbody>
         </table>
-        <br>
-        <s:a href="showplanriskaction.action?planid=%{#request.planid}" style="float:right;">Add risk into this plan</s:a><br>
     </div>
-</div>     
+</div> 
 
 </div>
         

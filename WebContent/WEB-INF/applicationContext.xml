@@ -368,5 +368,17 @@
 			<ref bean="riskmanager" />
 		</property>
 	</bean>
+	
+	<bean id="addriskandplan" class="com.ynwi.ssh.action.AddRiskAndPlanAction">
+		<property name="riskmanager">
+			<ref bean="riskmanager" />
+		</property>
+	</bean>
+	
+	<bean id="showplanriskaction" class="com.ynwi.ssh.action.ShowPlanRiskAction">
+		<property name="riskmanager">
+			<ref bean="riskmanager" />
+		</property>
+	</bean>
 
 </beans>

@@ -175,6 +175,16 @@
 			<result name="success">/PlanDetail.jsp</result>
 			<result name="error">/Fail.jsp</result>
 		</action>
+		<action name="addriskandplan" class="addriskandplan">
+			<result name="input">/AddRiskToPlan.jsp</result>
+			<result name="success">/AddRiskToPlan.jsp</result>
+			<result name="error">/Fail.jsp</result>
+		</action>
+		<action name="showplanriskaction" class="showplanriskaction">
+			<result name="input">/PlanDetail.jsp</result>
+			<result name="success">/AddRiskToPlan.jsp</result>
+			<result name="error">/Fail.jsp</result>
+		</action>
 	</package>
 
 </struts>
