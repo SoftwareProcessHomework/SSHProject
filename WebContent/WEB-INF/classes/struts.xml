@@ -15,6 +15,7 @@
 		<action name="check" class="checkAction">
 			<result name="input">/Login.jsp</result>
 			<result name="success">/Index.jsp</result>
+			<result name="success2">/Index2.jsp</result>
 			<result name="error">/Fail.jsp</result>
 		</action>
 		<action name="memberreg" class="memberregAction">

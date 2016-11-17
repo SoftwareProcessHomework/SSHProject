@@ -1,11 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Risk Page</title>
+ <head>
+        <title>Your Admin Panel</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        
         <!-- jQuery AND jQueryUI -->
         <script type="text/javascript" src="/SSHProject/js/libs/jquery/1.6/jquery.min.js"></script>
         <script type="text/javascript" src="/SSHProject/js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
@@ -16,9 +17,11 @@
         -->
         <link rel="stylesheet" href="/SSHProject/css/min.css" />
         <script type="text/javascript" src="/SSHProject/js/min.js"></script>
-</head>
-<body>
- <script type="text/javascript" src="/SSHProject/content/settings/main.js"></script>
+        
+    </head>
+    <body>
+        
+        <script type="text/javascript" src="/SSHProject/content/settings/main.js"></script>
 <link rel="stylesheet" href="/SSHProject/content/settings/style.css" />
 
 
@@ -88,72 +91,108 @@
                 </li>
                 <li class="current"><a href="#"><img src="/SSHProject/img/icons/menu/layout.png" alt="" />Options On Risk</a>
                     <ul>
-                         <li class="current"><a href="allriskaction.action">Risk List Check</a></li>
+                         <li><a href="allriskaction.action">Risk List Check</a></li>
                     </ul>
                 </li>
               </ul>
 
+
         </div>
-               
-
-
-	<div id="content" class="white">
-            <h1><img src="img/icons/posts.png" alt="" /> Risk List</h1>
-
-<div class="bloc">
-    <div class="title">Show Risk list</div>
-    <div class="content">
-         <table>
-            <thead>
-                <tr>
-                    <th>Content</th>
-                    <th>Possibility</th>
-                    <th>Influence</th>
-                    <th>Trigger/threshold</th>
-                    <th>Submitter</th>
-
-                    <th>Spoorer</th>
-                    <th>IsIdentify</th>
-                    <th>IsIssue</th>
-                    <th>CreateTime</th>
-                    <th>Update</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<s:iterator value="#request.risklist" id="us">  
-                    <tr>
-                     <td><s:property value="#us.content"/>  </td>
-                    <td>
-                    <s:property value="#us.possibility"/>
-                    </td>
-                    <td><s:property value="#us.influence"/>  </td>
-
-                    <td><s:property value="#us.triggerthreshold"/>  </td>
-                    <td><s:property value="#us.submitter"/>  </td>
-                    <td><s:property value="#us.spoorer"/></td>
-                    <td> <s:if test = "#us.isidentify != 1">
-                    	No
-                    </s:if>
-                    <s:if test = "#us.isidentify == 1">
-                    	Yes
-                    </s:if> </td>
-					<td> <s:if test = "#us.isissue != 1">
-                    	No
-                    </s:if>
-                    <s:if test = "#us.isissue == 1">
-                    	Yes
-                    </s:if> </td>
-                    <td><s:property value="#us.createtime"/>  </td>
-                    <td><s:a href="riskupdaction.action?risk.riskid=%{#us.riskid}">Update</s:a>         </td>
-                                        
-                    </tr>
-               </s:iterator> 
-                            </tbody>
-        </table>
+                
+                
+                
+                
+        <!--            
+              CONTENT 
+                        --> 
+        <div id="content" class="white">
+            <h1><img src="/SSHProject/img/icons/dashboard.png" alt="" /> Dashboard
+</h1>
+                
+<div class="bloc left">
+    <div class="title">
+        Dashboard
     </div>
-</div>     
+    <div class="content dashboard">
+        <div class="center">
+            <a href="allriskaction.action" class="shortcut">
+                <img src="/SSHProject/img/page.png" alt="" width="48" height="48"/>
+                Risk list
+            </a>
+            <div class="cb"></div>
+        </div>
+        <p>选择左侧操作或图标操作</p>
+    </div>
+</div>
+
+
+                
+<div class="bloc right">
+    <div class="title">
+        为未来拓展做准备
+    </div>
+    <div class="content">
+        <div class="left">
+            <table class="noalt">
+                <thead>
+                    <tr>
+                        <th colspan="2"><em>Content</em></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><h4>460</h4></td>
+                        <td>Posts</td>
+                    </tr>
+                    <tr>
+                        <td><h4>12</h4></td>
+                        <td>Pages</td>
+                    </tr>
+                    <tr>
+                        <td><h4>5</h4></td>
+                        <td>Categories</td>
+                    </tr>
+                    <tr>
+                        <td><h4>20 000</h4></td>
+                        <td>Contacts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="right">
+            <table class="noalt">
+                <thead>
+                    <tr>
+                        <th colspan="2"><em>Comments</em></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><h4>46 000</h4></td>
+                        <td class="good">Comments</td>
+                    </tr>
+                    <tr>
+                        <td><h4>5</h4></td>
+                        <td class="neutral">Waiting for validation</td>
+                    </tr>
+                    <tr>
+                        <td><h4>0</h4></td>
+                        <td class="bad">Spams</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cb"></div>
+    </div>
+</div>
+
+
+<div class="cb"></div>
+ 
+     
 
 </div>
         
-</body>
+        
+    </body>
 </html>

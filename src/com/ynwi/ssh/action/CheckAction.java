@@ -34,10 +34,18 @@ public class CheckAction extends ActionSupport {
 			ArrayList<User> userlist = userManager.checkUser(user);
 			System.out.println(userlist.size());
 			if(userlist.size()>0){
-				Map session = ActionContext.getContext().getSession();
-				session.put("user", (User)userlist.get(0));
-				System.out.println("Login Success");
-				return SUCCESS;
+				User loginuser = (User)userlist.get(0);
+				if(loginuser.getType().equals("M")){
+					Map session = ActionContext.getContext().getSession();
+					session.put("user", (User)userlist.get(0));
+					System.out.println("Login Success");
+					return SUCCESS;
+				}else{
+					Map session = ActionContext.getContext().getSession();
+					session.put("user", (User)userlist.get(0));
+					System.out.println("Login Success");
+					return "success2";
+				}
 			}else{
 				return ERROR;
 			}
