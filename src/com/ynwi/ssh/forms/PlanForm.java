@@ -2,6 +2,7 @@ package com.ynwi.ssh.forms;
 
 public class PlanForm {
 	private String name;
+	private String userid;
 
 	public String getName() {
 		return name;
@@ -9,5 +10,13 @@ public class PlanForm {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getUserid() {
+		return userid;
+	}
+
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 }

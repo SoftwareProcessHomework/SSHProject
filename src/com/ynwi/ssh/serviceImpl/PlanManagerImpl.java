@@ -30,7 +30,6 @@ public class PlanManagerImpl implements PlanManager{
 	public void create(PlanForm form) throws HibernateException {
 		Plan plan=new Plan();
 		BeanUtils.copyProperties(form, plan);
-		plan.setUserid("4");
 		dao.saveObject(plan);
 	}
 
