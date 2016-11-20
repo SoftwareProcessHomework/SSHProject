@@ -10,7 +10,6 @@ node {
         sh "${mvnHome}/bin/mvn -B clean package"
     }
     stage('deploy') {
-	sh "who am i"
         sh "sudo docker stop my || true"
         sh "sudo docker rm my || true"
         sh "sudo docker run --name my -p 11111:8080 -d tomcat"
