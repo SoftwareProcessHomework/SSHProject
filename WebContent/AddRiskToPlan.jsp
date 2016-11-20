@@ -119,7 +119,7 @@
 
 
 	<div class="content">
-      <s:form action="risklistaction">
+      <s:form action="risklistaction2">
         <div class="input">
             <label for="input1">开始时间</label>
             <input type="text" name = "begintime" id="input1" class="Wdate" onClick="WdatePicker()" />

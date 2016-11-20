@@ -29,14 +29,24 @@ public class ShowPlanRiskAction extends ActionSupport{
 	public String execute() {
 		try {
 			ArrayList<Risk> risklist=riskmanager.getrisklist();
-			//ArrayList<Risk> re=new ArrayList<Risk>();
-//			for(Risk i:risklist){
-//				if(!risk.contains(i))
-//					re.add(i);
-//			}
+			ArrayList<Riskandplan> rap=riskmanager.getriskandplanlist();
+			ArrayList<Risk> re=new ArrayList<Risk>();
+			for(Riskandplan i : rap){
+				if(i.getPlanid().equals(planid)){
+					for(Risk j:risklist){
+						if(j.getRiskid()==Integer.parseInt(i.getRiskid()))
+							re.add(j);
+					}
+				}
+			}
+			ArrayList<Risk> result=new ArrayList<Risk>();
+			for(Risk i:risklist){
+				if(!re.contains(i))
+					result.add(i);
+			}
 			System.out.println("Planid1 :"+planid);
 			Map request  = (Map)ActionContext.getContext().get("request");
-			request.put("risklist", risklist);
+			request.put("risklist",result);
 			request.put("planid", planid);
 			return SUCCESS;
 
